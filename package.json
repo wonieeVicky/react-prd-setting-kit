@@ -2,6 +2,10 @@
   "name": "react-prd-setting-kit",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.ts",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.ts"
+  },
   "repository": "https://github.com/wonieeVicky/react-prd-setting-kit",
   "author": "Vicky <hwfongfing@gmail.com>",
   "license": "MIT",
@@ -53,6 +57,7 @@
     "imagemin-svgo": "^10.0.1",
     "mini-css-extract-plugin": "^2.7.1",
     "prettier": "^2.8.0",
+    "process": "^0.11.10",
     "react-refresh": "^0.14.0",
     "ts-node": "^10.9.1",
     "style-loader": "^3.3.1",

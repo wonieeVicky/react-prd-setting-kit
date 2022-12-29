@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "next/babel",
+    "next/core-web-vitals",
+    "airbnb-base", // 추가
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}

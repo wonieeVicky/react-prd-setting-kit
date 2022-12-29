@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const path = require('path');
+
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
@@ -15,6 +17,12 @@ const nextConfig = {
       ...config,
       // infrastructureLogging: { debug: /PackFileCache/ },
       devtool: process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'eval-source-map',
+      // resolve: {
+      //   alias: {
+      //     '@': path.resolve(__dirname, 'src'),
+      //     // '@store': path.resolve(__dirname, 'src'),
+      //   },
+      // },
     };
   },
 
@@ -27,10 +35,10 @@ const nextConfig = {
   // },
   // resolve: {
   //   alias: {
-  //     '@pages': path.resolve(__dirname, 'src/pages'),
-  //     '@components': path.resolve(__dirname, 'src/components'),
-  //     '@layouts': path.resolve(__dirname, 'src/layouts'),
-  //     '@store': path.resolve(__dirname, 'src/store'),
+  //     // '@pages': path.resolve(__dirname, 'src/pages'),
+  //     // '@components': path.resolve(__dirname, 'src/components'),
+  //     // '@layouts': path.resolve(__dirname, 'src/layouts'),
+  //     '@store': path.resolve(__dirname, 'store'),
   //   },
   // },
 

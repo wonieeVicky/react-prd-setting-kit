@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-end with NextJS
 
-## Getting Started
-
-First, run the development server:
+## Directories
 
 ```bash
-npm run dev
-# or
-yarn dev
+.
+├── README.md
+├── hooks
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── pages
+│   ├── api
+│   │   ├── hello.ts
+│   │   └── photos.ts
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   └── index.tsx
+├── public
+│   ├── favicon.ico
+│   ├── next.svg
+│   ├── thirteen.svg
+│   └── vercel.svg
+├── store
+│   ├── index.ts
+│   └── user.ts
+├── styles
+│   ├── Home.module.css
+│   └── globals.css
+├── tsconfig.json
+└── utils
+    └── api.ts
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- hooks - 용도에 맞는 custom hook 추가
+- pages - 페이지 구성을 담당하는 컴포넌트, 폴더 구조로 url 결정
+  - \_app.tsx - react/index.js 와 같은 기능을 한다.
+  - index.tsx - react/App.js 와 같은 기능을 한다.
+  - api/ - `/api*`로 처리되며, 서버 측 번들로 클라이언트 번들에 포함되지 않음, 동적 경로를 지원
+- public - 정적 파일을 관리
+- styles - 전역 스타일을 관리
+- types - 도메인별 type interface 관리
+- utils - api.ts 등 기타 유틸성 파일
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## TODO: (우선순위순)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [x] Next.js + React + Typescript 기본 환경 세팅
+- [x] Style-Components Next 설정
+- [x] Redux + Redux-toolkit + Next-Redux 기본 환경 구성
+- [ ] 기본 API Fetch 로직 구현 with SWR
+- [ ] 상태 관리 로직 구현 with Redux, Redux-toolkit
+- [ ] SSR 테스트 페이지 구현
+- [ ] CSR 테스트 페이지 구현
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Ref
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next Commerce
+  https://github.com/vercel/commerce

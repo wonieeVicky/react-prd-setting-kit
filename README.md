@@ -5,7 +5,6 @@
 ```bash
 .
 ├── README.md
-├── hooks
 ├── next-env.d.ts
 ├── next.config.js
 ├── package.json
@@ -16,17 +15,14 @@
 │   ├── _app.tsx
 │   ├── _document.tsx
 │   └── index.tsx
-├── public
-│   ├── favicon.ico
-│   ├── next.svg
-│   ├── thirteen.svg
-│   └── vercel.svg
+├── hooks
 ├── store
 │   ├── index.ts
 │   └── user.ts
 ├── styles
 │   ├── Home.module.css
 │   └── globals.css
+├── public
 ├── tsconfig.json
 └── utils
     └── api.ts
@@ -45,7 +41,7 @@
 
 ---
 
-## TODO: (우선순위순)
+## TODO : 우선순위 순
 
 - [x] Next.js + React + Typescript 기본 환경 세팅
 - [x] Style-Components Next 설정

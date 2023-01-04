@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+// const path = require('path');
 
 const nextConfig = {
   reactStrictMode: true,
@@ -11,18 +15,15 @@ const nextConfig = {
   compiler: {
     styledComponents: true, // displayname : true, ssr: true
   },
+  compress: true,
 
-  webpack: (config) => {
+  webpack: (config, { webpack }) => {
+    const prod = process.env.NODE_ENV === 'production';
     return {
       ...config,
-      // infrastructureLogging: { debug: /PackFileCache/ },
-      devtool: process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'eval-source-map',
-      // resolve: {
-      //   alias: {
-      //     '@': path.resolve(__dirname, 'src'),
-      //     // '@store': path.resolve(__dirname, 'src'),
-      //   },
-      // },
+      mode: prod ? 'production' : 'development',
+      devtool: prod ? 'hidden-source-map' : 'eval-source-map',
+      plugins: [...config.plugins, new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /^\.\/ko$/)],
     };
   },
 
@@ -36,9 +37,9 @@ const nextConfig = {
   // resolve: {
   //   alias: {
   //     // '@pages': path.resolve(__dirname, 'src/pages'),
-  //     // '@components': path.resolve(__dirname, 'src/components'),
+  //     '@components': path.resolve(__dirname, 'components'),
   //     // '@layouts': path.resolve(__dirname, 'src/layouts'),
-  //     '@store': path.resolve(__dirname, 'store'),
+  //     // '@store': path.resolve(__dirname, 'store'),
   //   },
   // },
 
@@ -52,4 +53,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

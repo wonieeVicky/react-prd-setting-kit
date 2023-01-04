@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 9000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,6 +15,7 @@
     "axios": "^1.2.2",
     "next": "13.1.1",
     "next-redux-wrapper": "^8.1.0",
+    "parse-link-header": "^2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
@@ -23,8 +24,8 @@
     "swr": "^2.0.0"
   },
   "devDependencies": {
-    "@redux-devtools/extension": "^3.2.3",
     "@types/node": "18.11.18",
+    "@types/parse-link-header": "^2.0.0",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
     "@types/redux-logger": "^3.0.9",

@@ -1,7 +1,6 @@
 ﻿import { configureStore, EnhancedStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import { createWrapper, MakeStore } from 'next-redux-wrapper';
-import { composeWithDevTools } from '@redux-devtools/extension';
 import { Store } from 'redux';
 import rootReducer from './reducers';
 import { useDispatch } from 'react-redux';
@@ -12,7 +11,7 @@ export const store = configureStore({
   reducer: rootReducer, // 위에서 만든 persistReducer를 대입
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: isDev, // redux devTool을 보일건지 말건지에 대한 유무
-  enhancers: isDev ? [composeWithDevTools()] : [],
+  // enhancers: isDev ? [composeWithDevTools()] : [],
 });
 
 // 스토어를 생성하는 함수를 만든다.

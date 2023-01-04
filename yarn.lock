@@ -122,7 +122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.9.2":
   version: 7.20.7
   resolution: "@babel/runtime@npm:7.20.7"
   dependencies:
@@ -456,18 +456,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redux-devtools/extension@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "@redux-devtools/extension@npm:3.2.3"
-  dependencies:
-    "@babel/runtime": ^7.18.3
-    immutable: ^4.0.0
-  peerDependencies:
-    redux: ^3.1.0 || ^4.0.0
-  checksum: 320d6154026ad5368d8df762629b286d82774b9342f1489ba00d9a6f202f226b7bb6d44252791c84b50f1fd07e0ffa0d94607f1ffd9845bc2bda5da6597adbd4
-  languageName: node
-  linkType: hard
-
 "@reduxjs/toolkit@npm:^1.9.1":
   version: 1.9.1
   resolution: "@reduxjs/toolkit@npm:1.9.1"
@@ -525,6 +513,13 @@ __metadata:
   version: 18.11.18
   resolution: "@types/node@npm:18.11.18"
   checksum: 03f17f9480f8d775c8a72da5ea7e9383db5f6d85aa5fefde90dd953a1449bd5e4ffde376f139da4f3744b4c83942166d2a7603969a6f8ea826edfb16e6e3b49d
+  languageName: node
+  linkType: hard
+
+"@types/parse-link-header@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@types/parse-link-header@npm:2.0.0"
+  checksum: 127c89219ef077f70b9d0798d4766aa6583f5209d965b6987c3c37d4e54739ca9d9c8e91bc282e74d4a99154ee676f45163118ba03cd05f242cfda0e52b5088d
   languageName: node
   linkType: hard
 
@@ -1899,13 +1894,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immutable@npm:^4.0.0":
-  version: 4.2.1
-  resolution: "immutable@npm:4.2.1"
-  checksum: 525bd78c4b8550df1b5f12d3bc7eb8bb3daed24f97df4018ec99a16436fc2a03fcebfcb4d3d36c86c46039292a583ea9eceb8a55704932f70a0cc5f15695b42a
-  languageName: node
-  linkType: hard
-
 "import-fresh@npm:^3.0.0, import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -2568,6 +2556,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"parse-link-header@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "parse-link-header@npm:2.0.0"
+  dependencies:
+    xtend: ~4.0.1
+  checksum: 0e96c6af9910e8f92084b49b8dc6a10dd58db470847d1499f562576180c1ac5e49d18007697f0d538e5f3efdc8ce1d8777641f3ae225302b74af0dd0578b628e
+  languageName: node
+  linkType: hard
+
 "path-exists@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
@@ -2706,9 +2703,9 @@ __metadata:
   dependencies:
     "@next/bundle-analyzer": ^13.1.1
     "@next/font": 13.1.1
-    "@redux-devtools/extension": ^3.2.3
     "@reduxjs/toolkit": ^1.9.1
     "@types/node": 18.11.18
+    "@types/parse-link-header": ^2.0.0
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
     "@types/redux-logger": ^3.0.9
@@ -2720,6 +2717,7 @@ __metadata:
     eslint-plugin-import: ^2.26.0
     next: 13.1.1
     next-redux-wrapper: ^8.1.0
+    parse-link-header: ^2.0.0
     react: 18.2.0
     react-dom: 18.2.0
     react-redux: ^8.0.5
@@ -3387,6 +3385,13 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: c3c100a181b731f40b7f2fddf004aa023f79d64f489706a28bc23ff88e87f6a64b3c6651fbec3a84a53960b75159574d7a7385709847a62ddb7ad6af76f49138
+  languageName: node
+  linkType: hard
+
+"xtend@npm:~4.0.1":
+  version: 4.0.2
+  resolution: "xtend@npm:4.0.2"
+  checksum: ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a
   languageName: node
   linkType: hard
 

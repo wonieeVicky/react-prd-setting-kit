@@ -14,10 +14,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./"
-    // "paths": {
-    //   "@store/*": ["store/*"]
-    // }
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@store/*": ["store/*"],
+      "@style/*": ["style/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

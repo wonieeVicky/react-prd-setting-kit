@@ -2,16 +2,17 @@
 import logger from 'redux-logger';
 import { createWrapper, MakeStore } from 'next-redux-wrapper';
 import { Store } from 'redux';
-import rootReducer from './reducers';
+import counterReducer from 'features/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 
 const isDev = process.env.NODE_ENV !== 'production';
-// TODO: isDev일 때만 logger를 사용하도록 변경, composeWithDevTools 동작 확인
+
 export const store = configureStore({
-  reducer: rootReducer, // 위에서 만든 persistReducer를 대입
+  reducer: {
+    counter: counterReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-  devTools: isDev, // redux devTool을 보일건지 말건지에 대한 유무
-  // enhancers: isDev ? [composeWithDevTools()] : [],
+  devTools: isDev,
 });
 
 // 스토어를 생성하는 함수를 만든다.
@@ -28,6 +29,7 @@ export const wrapper = createWrapper<Store>(makeStore, { debug: isDev });
 */
 
 type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof rootReducer>;
+// export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof store.getState>;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action>;

@@ -45,8 +45,8 @@
 
 - [x] Next.js + React + Typescript 기본 환경 세팅
 - [x] Style-Components Next 설정
-- [x] Redux + Redux-toolkit + Next-Redux 기본 환경 구성
-- [ ] 기본 API Fetch 로직 구현 with SWR
+- [ ] Redux + Redux-toolkit + Next-Redux 기본 환경 구성
+- [ ] 기본 API Fetch 로직 구현 with RTK Query
 - [ ] 상태 관리 로직 구현 with Redux, Redux-toolkit
 - [ ] SSR 테스트 페이지 구현
 - [ ] CSR 테스트 페이지 구현
@@ -58,3 +58,4 @@
 - Next Commerce
   https://github.com/vercel/commerce
   https://github.com/vercel/next.js/tree/canary/examples/with-redux
+  https://github.com/kirill-konshin/next-redux-wrapper
